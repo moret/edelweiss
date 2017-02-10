@@ -11,4 +11,4 @@ class Car extends React.Component {
   }
 }
 
-export default withSpeed(Car);
+export default withSpeed(Car, 8);
