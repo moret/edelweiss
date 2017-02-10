@@ -12,6 +12,9 @@ const models = {
   },
 };
 
+@withSpeed(
+  ownProps => (models[ownProps.model].speed)
+)
 class Car extends React.Component {
   render() {
     return (
@@ -25,4 +28,4 @@ class Car extends React.Component {
   }
 }
 
-export default withSpeed(Car, ownProps => (models[ownProps.model].speed));
+export default Car;

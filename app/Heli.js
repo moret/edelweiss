@@ -1,6 +1,9 @@
 import React from 'react';
 import withSpeed from './withSpeed';
 
+@withSpeed(
+  () => (10)
+)
 class Heli extends React.Component {
   constructor(props) {
     super(props);
@@ -29,4 +32,4 @@ class Heli extends React.Component {
   }
 }
 
-export default withSpeed(Heli, () => (10));
+export default Heli;
