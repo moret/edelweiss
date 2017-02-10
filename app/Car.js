@@ -14,7 +14,6 @@ const models = {
 
 class Car extends React.Component {
   render() {
-    console.log(this.props);
     return (
       <div>
         <img
@@ -26,4 +25,4 @@ class Car extends React.Component {
   }
 }
 
-export default withSpeed(Car, 8);
+export default withSpeed(Car, ownProps => (models[ownProps.model].speed));

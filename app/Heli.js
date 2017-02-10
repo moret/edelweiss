@@ -29,4 +29,4 @@ class Heli extends React.Component {
   }
 }
 
-export default withSpeed(Heli, 10);
+export default withSpeed(Heli, () => (10));

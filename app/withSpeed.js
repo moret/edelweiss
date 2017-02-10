@@ -1,6 +1,6 @@
 import React from 'react';
 
-function withSpeed(WrappedComponent, speed) {
+function withSpeed(WrappedComponent, speedFunction) {
   return class WithSpeed extends WrappedComponent {
     constructor(props) {
       super(props);
@@ -14,7 +14,7 @@ function withSpeed(WrappedComponent, speed) {
     }
 
     move = () => {
-      const newDistance = this.state.distance + speed;
+      const newDistance = this.state.distance + speedFunction(this.props);
       this.setState({ distance: newDistance });
       if (newDistance > 400) {
         clearInterval(this.interval);
@@ -23,7 +23,10 @@ function withSpeed(WrappedComponent, speed) {
 
     render() {
       return (
-        <WrappedComponent distance={this.state.distance} />
+        <WrappedComponent
+          distance={this.state.distance}
+          {...this.props}
+        />
       )
     }
   }
