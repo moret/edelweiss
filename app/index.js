@@ -7,7 +7,9 @@ import Car from './Car';
 ReactDOM.render(
   <div>
     <hr />
-    <Car />
+    <Car model="rioCab" />
+    <hr />
+    <Car model="ferrari" />
     <hr />
     <Heli />
     <hr />
